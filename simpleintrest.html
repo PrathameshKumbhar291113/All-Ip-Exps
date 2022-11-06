@@ -1,0 +1,61 @@
+//To find Simple Interest and Compound Interest
+<html>
+  <head>
+    <title>
+      JavaScript Program to find Simple Interest and Compound Interest
+    </title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>
+          <input
+            type="text"
+            name="a"
+            id="first"
+            placeholder="Enter principal"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input
+            type="text"
+            name="b"
+            id="second"
+            placeholder="Enter time period "
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input
+            type="text"
+            name="c"
+            id="third"
+            placeholder="Enter rate of interest(%)"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td><button onclick="simple_interest()">Submit</button></td>
+      </tr>
+    </table>
+    <div id="num"></div>
+    <div id="num1"></div>
+  </body>
+
+  <script type="text/javascript">
+    function simple_interest() {
+      var p, t, r, si, ci;
+      p = document.getElementById("first").value;
+      t = document.getElementById("second").value;
+      r = document.getElementById("third").value;
+      si = parseInt((p * t * r) / 100);
+      amount = p * Math.pow(1 + r / 100, t);
+      ci = amount - p;
+      document.getElementById("num").innerHTML = "Simple interest : " + si;
+      document.getElementById("num1").innerHTML = "Compound interest : " + ci;
+    }
+  </script>
+</html>
